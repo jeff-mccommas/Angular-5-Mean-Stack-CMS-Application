@@ -1,0 +1,9 @@
+#navbar ul li a{
+  color: #ffffff!important;
+  padding: 5px!important;
+}
+#navbar ul li a:hover{
+  color: #d0d0d0 !important;
+  text-decoration: underline;
+}
+

@@ -1,0 +1,39 @@
+
+
+
+
+
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse ">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" routerLink="/">Angular 5 CMS</a>
+
+  <div id="navbar" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <ng-container *ngFor="let page of pages?.value">
+        <li *ngIf="page.slug!=='home'">
+          <a routerLink="/{{page.slug}}">{{ page.title }}</a>
+        </li>
+      </ng-container>
+    </ul>
+    <ul *ngIf="!userLoggedIn" class="nav navbar-nav navbar-right">
+      <li><a routerLink="/register">Register</a></li>
+      <li><a routerLink="/login">Login</a></li>
+    </ul>
+    <ul *ngIf="userLoggedIn" class="nav navbar-nav navbar-right">
+      <li><a routerLink="/logout">Hi {{ user }}, logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
