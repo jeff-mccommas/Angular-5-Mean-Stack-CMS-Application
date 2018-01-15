@@ -6,4 +6,12 @@
   color: #d0d0d0 !important;
   text-decoration: underline;
 }
-
+#navbar-right ul li a{
+  color: #ffffff!important;
+  padding: 5px!important;
+  margin: 5px;
+}
+#navnavbar-rightbar ul li a:hover{
+  color: #d0d0d0 !important;
+  text-decoration: underline;
+}

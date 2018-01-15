@@ -14,14 +14,20 @@ import { PageService } from './services/page.service';
 import { Title } from '@angular/platform-browser';
 import { UserService } from './services/user.service';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 const appRoutes: Routes = [
-
   {path: 'register', component: RegisterComponent},
-
-    {path: ':page', component: PagesComponent},
-    {path: '', component: PagesComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'logout', component: LogoutComponent},
+  // {path: 'admin/pages', component: AdminPagesComponent},
+  // {path: 'admin/add-page', component: AdminAddPageComponent},
+  // {path: 'admin/edit-page/:id', component: AdminEditPageComponent},
+  // {path: 'admin/sidebar', component: AdminSidebarComponent},
+  {path: ':page', component: PagesComponent},
+  {path: '', component: PagesComponent}
 ]
 
 @NgModule({
@@ -30,6 +36,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     PagesComponent,
     RegisterComponent,
+    LoginComponent,
+    LogoutComponent,
 
   ],
   imports: [

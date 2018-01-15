@@ -1,39 +1,31 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="/">Angular CMS <span class="sr-only">(current)</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNavDropdown" class="navbar-collapse collapse">
+      <ul class="navbar-nav mr-auto">
+
+        <ng-container *ngFor="let page of pages?.value">
+          <li class="nav-item" *ngIf="page.slug!=='home'">
+            <a class="nav-link" routerLink="/{{page.slug}}">{{ page.title }}</a>
+          </li>
+        </ng-container>
+
+      </ul>
+      <ul *ngIf="!userLoggedIn" class="nav navbar">
+        <li class="nav-item"><a class="nav-link" routerLink="/register">Register</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/login">Login</a></li>
+      </ul>
+      <ul *ngIf="userLoggedIn" class="nav navbar">
+        <li class="nav-item"><span class="text-muted">Hi {{ user }}</span>, <a style="color: rgba(255, 255, 255, 0.5)" class="nav-item" routerLink="/logout">logout</a></li>
+      </ul>
+
+    </div>
+  </nav>
 
 
-
-
-
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse ">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" routerLink="/">Angular 5 CMS</a>
-
-  <div id="navbar" class="collapse navbar-collapse">
-    <ul class="nav navbar-nav">
-      <ng-container *ngFor="let page of pages?.value">
-        <li *ngIf="page.slug!=='home'">
-          <a routerLink="/{{page.slug}}">{{ page.title }}</a>
-        </li>
-      </ng-container>
-    </ul>
-    <ul *ngIf="!userLoggedIn" class="nav navbar-nav navbar-right">
-      <li><a routerLink="/register">Register</a></li>
-      <li><a routerLink="/login">Login</a></li>
-    </ul>
-    <ul *ngIf="userLoggedIn" class="nav navbar-nav navbar-right">
-      <li><a routerLink="/logout">Hi {{ user }}, logout</a></li>
-    </ul>
   </div>
-</nav>
-
-
-
-
-
-
-
-
-
 
 
