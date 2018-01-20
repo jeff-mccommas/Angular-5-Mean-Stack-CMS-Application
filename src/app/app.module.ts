@@ -18,6 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AdminPagesComponent } from './components/admin-pages/admin-pages.component';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
+import { ComponentsComponent } from './components/components.component';
+import { AdminAddPageComponent } from './components/admin-add-page/admin-add-page.component';
 
 
 const appRoutes: Routes = [
@@ -25,7 +27,7 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'logout', component: LogoutComponent},
   {path: 'admin/pages', component: AdminPagesComponent},
-  // {path: 'admin/add-page', component: AdminAddPageComponent},
+  {path: 'admin/add-page', component: AdminAddPageComponent},
   // {path: 'admin/edit-page/:id', component: AdminEditPageComponent},
   // {path: 'admin/sidebar', component: AdminSidebarComponent},
   {path: ':page', component: PagesComponent},
@@ -42,6 +44,8 @@ const appRoutes: Routes = [
     LogoutComponent,
     AdminPagesComponent,
     AdminNavbarComponent,
+    ComponentsComponent,
+    AdminAddPageComponent,
   ],
   imports: [
     BrowserModule,
