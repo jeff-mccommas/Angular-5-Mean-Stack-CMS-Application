@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     get front() {
-        if (localStorage.getItem("user") === "\"admin\"") {
+        if (localStorage.getItem("user") === "\"jeffmccommas@gmail.com\"") {
             return false;
         }
         return true;

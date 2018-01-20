@@ -1,1 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 1)!important;
+}

@@ -1,0 +1,31 @@
+<div class="alert alert-success" *ngIf="successMsg">
+  <p>Page deleted.</p>
+</div>
+
+<div class="alert alert-danger" *ngIf="errorMsg">
+  <p>Error deleting the page.</p>
+</div>
+
+<h1 class="page-title">Pages</h1>
+<a class="btn btn-primary" routerLink="/admin/add-page">Add a page</a>
+<br><br>
+
+<table class="table">
+  <tr bgcolor="#f9f9f9">
+    <th>Title</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  
+  <tr *ngFor="let page of pages.value">
+    <td>
+      {{ page.title }}
+    </td>
+    <td>
+      <a routerLink="/admin/edit-page/{{ page._id }}">Edit</a>
+    </td>
+    <td *ngIf="page.slug != 'home'">
+      <a (click)="deletePage(page._id)" routerLink="/admin/pages">Delete</a>
+    </td>
+  </tr>
+</table>

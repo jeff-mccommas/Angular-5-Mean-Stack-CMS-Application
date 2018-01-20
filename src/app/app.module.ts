@@ -16,13 +16,15 @@ import { UserService } from './services/user.service';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AdminPagesComponent } from './components/admin-pages/admin-pages.component';
+import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 
 
 const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'logout', component: LogoutComponent},
-  // {path: 'admin/pages', component: AdminPagesComponent},
+  {path: 'admin/pages', component: AdminPagesComponent},
   // {path: 'admin/add-page', component: AdminAddPageComponent},
   // {path: 'admin/edit-page/:id', component: AdminEditPageComponent},
   // {path: 'admin/sidebar', component: AdminSidebarComponent},
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     LoginComponent,
     LogoutComponent,
-
+    AdminPagesComponent,
+    AdminNavbarComponent,
   ],
   imports: [
     BrowserModule,
