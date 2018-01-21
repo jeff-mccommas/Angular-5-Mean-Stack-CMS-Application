@@ -9,12 +9,12 @@ var Sidebar = require('../models/sidebar');
 */
 router.get('/edit-sidebar', function (req, res) {
 
-    var id = "59dde326c7590a27a033fdec";
+  var id = "5a648c7ea189a90239d06cd9";
 
-    Sidebar.findById(id, function (err, sidebar) {
-        if (err) console.log(err);
-        res.json(sidebar);
-    });
+  Sidebar.findById(id, function (err, sidebar) {
+    if (err) console.log(err);
+    res.json(sidebar);
+  });
 });
 
 /*
@@ -22,22 +22,22 @@ router.get('/edit-sidebar', function (req, res) {
 */
 router.post('/edit-sidebar', function (req, res) {
 
-    var id = "59dde326c7590a27a033fdec";
+  var id = "5a648c7ea189a90239d06cd9";
 
-    Sidebar.findById(id, function (err, sidebar) {
-        if (err) console.log(err);
+  Sidebar.findById(id, function (err, sidebar) {
+    if (err) console.log(err);
 
-        sidebar.content = req.body.content;
+    sidebar.content = req.body.content;
 
-        sidebar.save(function (err) {
-            if (err) {
-                console.log(err);
-                res.json("problem");
-            } else {
-                res.json("ok");
-            }
-        });
+    sidebar.save(function (err) {
+      if (err) {
+        console.log(err);
+        res.json("problem");
+      } else {
+        res.json("ok");
+      }
     });
+  });
 });
 
 // Exports

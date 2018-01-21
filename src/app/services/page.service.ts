@@ -1,4 +1,4 @@
-import { Http } from '@angular/http';
+// import { Http } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 // import 'rxjs/add/operator/map';

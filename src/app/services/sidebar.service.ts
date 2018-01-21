@@ -21,7 +21,7 @@ export class SidebarService {
     postSidebar(value) {
         // return this.http.post('http://localhost:3000/sidebar/edit-sidebar', value)
         //     .map(res => res.json());
-        return this.http.post('http://localhost:3000/sidebar/edit-sidebar', value)
+        return this.http.post('http://localhost:3000/sidebar/edit-sidebar', value);
     }
 
 }

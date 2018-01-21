@@ -1,17 +1,19 @@
 <div class="alert alert-success" *ngIf="successMsg">
-  <p>Page added.</p>
+  <p>Page edited.</p>
 </div>
-
 <div class="alert alert-danger" *ngIf="errorMsg">
   <p>Page title exists, choose another.</p>
 </div>
+<div class="alert alert-danger" *ngIf="errorMsg2">
+  <p>Problem editing page, try later.</p>
+</div>
 
-<h1 class="page-title">Add a page</h1>
+<h1 class="page-title">Edit {{ page?.title }} page</h1>
 <a class="btn btn-primary" routerLink="/admin/pages">Back to all pages</a>
 <br>
 <br>
 
-<form novalidate #f="ngForm" (ngSubmit)="addPage(f)">
+<form novalidate #f="ngForm" (ngSubmit)="editPage(f)">
 
   <div class="form-group">
     <label for="">Title:</label>
@@ -33,12 +35,14 @@
 
   <div class="form-group">
     <label for="">Has Sidebar:
-      <input type="checkbox" name="hasSidebar" [(ngModel)]="hasSidebar" >
+      <input type="checkbox" name="hasSidebar" [checked]="sidebar" [(ngModel)]="hasSidebar" >
     </label>
   </div>
 
+  <input type="hidden" name="id" [(ngModel)]="id">
+
   <div class="form-group">
-    <button class="btn btn-default" [disabled]="!f.valid">Add page</button>
+    <button class="btn btn-primary" [disabled]="!f.valid">Edit page</button>
   </div>
 
 </form>

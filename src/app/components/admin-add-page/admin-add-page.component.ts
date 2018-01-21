@@ -37,22 +37,22 @@ export class AdminAddPageComponent implements OnInit {
     if (valid) {
       value.content = CKEDITOR.instances.content.getData();
       this.pageService.postAddPage(value).subscribe(res => {
-        if (res == 'pageExists') {
+        if (res === 'pageExists') {
           this.errorMsg = true;
           setTimeout(function() {
             this.errorMsg = false;
-          }.bind(this),2000);
+          }.bind(this), 2000);
         } else {
           this.successMsg = true;
           setTimeout(function() {
             this.successMsg = false;
-          }.bind(this),2000);
+          }.bind(this), 2000);
 
           CKEDITOR.instances.content.setData('');
 
           this.pageService.getPages().subscribe(pages => {
             this.pageService.pagesBS.next(pages);
-          })
+          });
         }
       });
     } else {
