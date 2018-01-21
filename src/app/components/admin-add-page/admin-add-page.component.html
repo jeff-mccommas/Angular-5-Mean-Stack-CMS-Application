@@ -12,7 +12,7 @@
 <br>
 
 <form novalidate #f="ngForm" (ngSubmit)="addPage(f)">
-  
+
   <div class="form-group">
     <label for="">Title:</label>
     <input type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="title" #pageTitle="ngModel"
@@ -24,21 +24,21 @@
   <div class="alert alert-danger" *ngIf="pageTitle.errors?.minlength && pageTitle.touched">
     Minimum length is 3.
   </div>
-  
+
   <div class="form-group">
     <label for="">Content:</label>
     <textarea class="form-control" name="content" cols="30" rows="10" placeholder="Content"
               [(ngModel)]="content"></textarea>
   </div>
-  
+
   <div class="form-group">
     <label for="">Has Sidebar:
       <input type="checkbox" name="hasSidebar" [(ngModel)]="hasSidebar" >
     </label>
   </div>
-  
+
   <div class="form-group">
-    <button class="btn btn-default" [disabled]="!f.valid">Add page</button>
+    <button button class="btn btn-primary" [disabled]="!f.valid">Add page</button>
   </div>
 
 </form>
